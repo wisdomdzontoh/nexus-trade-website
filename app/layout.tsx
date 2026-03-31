@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "GIPC Ghana",
     "NexusTrade Ghana",
   ],
+  metadataBase: new URL("https://nexustrade.gh"),
   openGraph: {
     type: "website",
     locale: "en_US",
