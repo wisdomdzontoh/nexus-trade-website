@@ -65,7 +65,7 @@ export default function OpportunitiesPage() {
               </button>
             ))}
             <span className="ml-auto text-sm text-[#2C2C2C]/50">
-              {filtered.length} opportunity{filtered.length !== 1 ? "s" : ""}
+              {filtered.length} {filtered.length !== 1 ? "opportunities" : "opportunity"}
             </span>
           </div>
         </div>
