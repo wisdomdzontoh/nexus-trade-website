@@ -1,0 +1,51 @@
+<svg width="100%" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <clipPath id="hexClip2">
+    <polygon points="60,4 116,36 116,100 60,132 4,100 4,36"/>
+  </clipPath>
+<mask id="imagine-text-gaps-ekn3rm" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="280" fill="white"/><rect x="228.00001525878906" y="98.65306091308594" width="326.7127990722656" height="62.775516510009766" fill="black" rx="2"/><rect x="230" y="170.48980712890625" width="100.02806854248047" height="23.591838836669922" fill="black" rx="2"/><rect x="231" y="202.2041015625" width="223.0255584716797" height="16.24489974975586" fill="black" rx="2"/></mask></defs>
+
+
+
+<!-- ── ICON MARK centred vertically at y=140 ── -->
+<g transform="translate(80, 72)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+
+  <!-- Outer hexagon — deep green -->
+  <polygon points="60,2 118,34 118,102 60,134 2,102 2,34" fill="#1A5C38" style="fill:rgb(26, 92, 56);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Inner hexagon ring — gold -->
+  <polygon points="60,12 108,40 108,96 60,124 12,96 12,40" fill="none" stroke="#C8900A" stroke-width="3" style="fill:none;stroke:rgb(200, 144, 10);color:rgb(255, 255, 255);stroke-width:3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Globe circle -->
+  <circle cx="60" cy="68" r="47" fill="none" stroke="white" stroke-width="1.4" opacity="0.5" clip-path="url(#hexClip2)" style="fill:none;stroke:rgb(255, 255, 255);color:rgb(255, 255, 255);stroke-width:1.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Equator -->
+  <line x1="14" y1="68" x2="106" y2="68" stroke="white" stroke-width="1.2" opacity="0.55" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Vertical axis -->
+  <line x1="60" y1="12" x2="60" y2="124" stroke="white" stroke-width="1.2" opacity="0.55" style="fill:rgb(0, 0, 0);stroke:rgb(255, 255, 255);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Left longitude arc -->
+  <path d="M60,12 Q28,40 28,68 Q28,96 60,124" fill="none" stroke="white" stroke-width="1.2" opacity="0.55" style="fill:none;stroke:rgb(255, 255, 255);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Right longitude arc -->
+  <path d="M60,12 Q92,40 92,68 Q92,96 60,124" fill="none" stroke="white" stroke-width="1.2" opacity="0.55" style="fill:none;stroke:rgb(255, 255, 255);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Gold upward arrow -->
+  <polygon points="60,20 75,50 67,50 67,90 53,90 53,50 45,50" fill="#C8900A" opacity="0.95" style="fill:rgb(200, 144, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.95;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ghana star — bottom centre -->
+  <polygon points="60,108 61.7,112.7 66.6,112.7 62.8,115.9 64.1,120.8 60,118 55.9,120.8 57.2,115.9 53.4,112.7 58.3,112.7" fill="#C8900A" style="fill:rgb(200, 144, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</g>
+
+<!-- ── WORDMARK ── -->
+<text x="232" y="148" style="fill:rgb(76, 175, 124);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:52px;font-weight:700;text-anchor:start;dominant-baseline:auto">NexusTrade</text>
+
+<!-- Gold rule -->
+<line x1="232" y1="160" x2="636" y2="160" mask="url(#imagine-text-gaps-ekn3rm)" style="fill:rgb(0, 0, 0);stroke:rgb(200, 144, 10);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- GHANA -->
+<text x="234" y="188" style="fill:rgb(230, 168, 23);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:17px;font-weight:400;text-anchor:start;dominant-baseline:auto">GHANA</text>
+
+<!-- Tagline -->
+<text x="235" y="214" style="fill:rgb(170, 170, 170);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:start;dominant-baseline:auto">INVESTMENT FACILITATION</text>
+
+</svg>

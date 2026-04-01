@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -66,18 +67,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded bg-[#C8900A] flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-bold text-sm font-[family-name:var(--font-playfair)]">N</span>
-            </div>
-            <div className="leading-none">
-              <span className="block text-white font-bold text-base tracking-wide font-[family-name:var(--font-playfair)]">
-                NexusTrade
-              </span>
-              <span className="block text-[#C8900A] text-[10px] font-medium tracking-widest uppercase">
-                Ghana
-              </span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/nexustrade_ghana_logo.svg"
+              alt="NexusTrade Ghana"
+              width={148}
+              height={61}
+              className="h-11 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

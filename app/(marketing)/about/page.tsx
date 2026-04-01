@@ -39,15 +39,15 @@ const values = [
 const team = [
   {
     name: "Awudu Ibrahim",
-    role: "Founder & Managing Director",
+    role: "Co-Founder",
     bio: "Awudu brings extensive experience in investment facilitation across West Africa, with deep expertise in navigating Ghana's regulatory environment and building relationships between international capital and local opportunity.",
-    initials: "AI",
+    photo: "/images/awudu-ibrahim-photo.png",
   },
   {
-    name: "Investment Advisory Team",
-    role: "Sector Specialists",
-    bio: "Our advisory team includes specialists in agriculture, manufacturing, and industrial development — combining technical sector knowledge with practical investment structuring experience.",
-    initials: "AT",
+    name: "Seth Kunkyebe",
+    role: "Co-Founder",
+    bio: "Seth brings a strong background in business development and cross-border trade facilitation, with a focus on creating sustainable investment partnerships that drive growth across Ghana's key economic sectors.",
+    photo: "/images/seth-kunkyebe-photo.png",
   },
 ];
 
@@ -128,6 +128,7 @@ export default function AboutPage() {
                   src="/images/about-team.jpg"
                   alt="NexusTrade Ghana team"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -248,22 +249,29 @@ export default function AboutPage() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="bg-white rounded-xl p-8 border border-[#E5E0D8] flex flex-col items-center text-center"
+                className="bg-white rounded-xl border border-[#E5E0D8] overflow-hidden"
               >
-                <div className="w-20 h-20 rounded-full bg-[#0D1B2A] flex items-center justify-center mb-5">
-                  <span className="text-2xl font-bold text-[#E6A817] font-[family-name:var(--font-playfair)]">
-                    {member.initials}
-                  </span>
+                <div className="relative h-72 bg-[#F8F5F0]">
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    loading={member.name === "Awudu Ibrahim" ? "eager" : "lazy"}
+                    className="object-cover object-top"
+                  />
                 </div>
-                <h3 className="text-lg font-bold text-[#0D1B2A] mb-1 font-[family-name:var(--font-playfair)]">
-                  {member.name}
-                </h3>
-                <span className="text-[#C8900A] text-sm font-medium mb-4">
-                  {member.role}
-                </span>
-                <p className="text-sm text-[#2C2C2C]/60 leading-relaxed">
-                  {member.bio}
-                </p>
+                <div className="p-6 text-center">
+                  <h3 className="text-lg font-bold text-[#0D1B2A] mb-1 font-[family-name:var(--font-playfair)]">
+                    {member.name}
+                  </h3>
+                  <span className="inline-block text-[#C8900A] text-sm font-semibold mb-4 px-3 py-1 bg-[#C8900A]/10 rounded-full">
+                    {member.role}
+                  </span>
+                  <p className="text-sm text-[#2C2C2C]/60 leading-relaxed">
+                    {member.bio}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

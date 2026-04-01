@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Mail, Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MessageCircle, MapPin, Clock, MessageSquare } from "lucide-react";
 import ContactForm from "@/components/forms/contact-form";
 
 export const metadata: Metadata = {
@@ -118,6 +118,23 @@ export default function ContactPage() {
 
                   <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E5E0D8]">
                     <div className="w-10 h-10 rounded-lg bg-[#1A5C38]/10 flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="w-5 h-5 text-[#1A5C38]" />
+                    </div>
+                    <div>
+                      <span className="block text-xs text-[#2C2C2C]/50 uppercase tracking-wider mb-0.5">
+                        WeChat
+                      </span>
+                      <span className="block text-[#0D1B2A] font-semibold text-sm select-all">
+                        wxid_9r0knke4jdbm22
+                      </span>
+                      <span className="text-xs text-[#2C2C2C]/40">
+                        Scan or search WeChat ID
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-[#E5E0D8]">
+                    <div className="w-10 h-10 rounded-lg bg-[#1A5C38]/10 flex items-center justify-center flex-shrink-0">
                       <Clock className="w-5 h-5 text-[#1A5C38]" />
                     </div>
                     <div>
@@ -139,8 +156,9 @@ export default function ContactPage() {
               <div className="bg-[#0D1B2A] rounded-xl p-5">
                 <p className="text-white/70 text-sm leading-relaxed">
                   <span className="text-[#E6A817] font-semibold">Chinese investors:</span>{" "}
-                  Our team can communicate in Mandarin. Feel free to reach out
-                  via WeChat or WhatsApp in your preferred language.
+                  Our team can communicate in Mandarin. Reach us on WeChat
+                  (<span className="font-mono text-white/80 text-xs">wxid_9r0knke4jdbm22</span>)
+                  or WhatsApp in your preferred language.
                 </p>
               </div>
             </div>

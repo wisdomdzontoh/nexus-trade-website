@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 
 const footerLinks = {
@@ -33,18 +34,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 rounded bg-[#C8900A] flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-base font-[family-name:var(--font-playfair)]">N</span>
-              </div>
-              <div className="leading-none">
-                <span className="block text-white font-bold text-lg font-[family-name:var(--font-playfair)]">
-                  NexusTrade
-                </span>
-                <span className="block text-[#C8900A] text-[10px] font-medium tracking-widest uppercase">
-                  Ghana
-                </span>
-              </div>
+            <Link href="/" className="inline-block mb-5">
+              <Image
+                src="/nexustrade_ghana_logo.svg"
+                alt="NexusTrade Ghana"
+                width={160}
+                height={66}
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-xs">
               Your trusted gateway to Ghana's most promising investment opportunities —
@@ -70,6 +67,12 @@ export default function Footer() {
               <div className="flex items-start gap-3 text-sm text-white/60">
                 <MapPin className="w-4 h-4 flex-shrink-0 text-[#C8900A] mt-0.5" />
                 Accra, Ghana
+              </div>
+              <div className="flex items-center gap-3 text-sm text-white/60">
+                <svg className="w-4 h-4 flex-shrink-0 text-[#C8900A]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8.69 11.52c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.37.83-.83.83zm3.62 0c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.37.83-.83.83zM12 2C6.48 2 2 6.01 2 10.97c0 2.88 1.47 5.45 3.78 7.12L5 21l3.16-1.55C9.34 19.8 10.64 20 12 20c5.52 0 10-4.01 10-8.97C22 6.01 17.52 2 12 2z"/>
+                </svg>
+                WeChat: wxid_9r0knke4jdbm22
               </div>
             </div>
           </div>
@@ -156,6 +159,12 @@ export default function Footer() {
               <ExternalLink className="w-3 h-3 text-green-400" />
               <span className="text-xs text-white/70">Chat on WhatsApp</span>
             </a>
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded px-4 py-2">
+              <svg className="w-3 h-3 text-[#C8900A]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8.69 11.52c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.37.83-.83.83zm3.62 0c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.37.83-.83.83zM12 2C6.48 2 2 6.01 2 10.97c0 2.88 1.47 5.45 3.78 7.12L5 21l3.16-1.55C9.34 19.8 10.64 20 12 20c5.52 0 10-4.01 10-8.97C22 6.01 17.52 2 12 2z"/>
+              </svg>
+              <span className="text-xs text-white/60">WeChat: wxid_9r0knke4jdbm22</span>
+            </div>
           </div>
         </div>
       </div>
