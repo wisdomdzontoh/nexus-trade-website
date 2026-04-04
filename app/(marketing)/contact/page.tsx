@@ -55,7 +55,7 @@ export default function ContactPage() {
                         Email
                       </span>
                       <span className="block text-[#0D1B2A] font-semibold text-sm group-hover:text-[#1A5C38] transition-colors">
-                        nexustrade@gmail.com
+                        nexustradeghanalimited@gmail.com
                       </span>
                     </div>
                   </a>
