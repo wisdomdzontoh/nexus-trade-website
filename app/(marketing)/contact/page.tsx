@@ -74,6 +74,9 @@ export default function ContactPage() {
                       <span className="block text-[#0D1B2A] font-semibold text-sm group-hover:text-[#1A5C38] transition-colors">
                         +86 166 0572 8983
                       </span>
+                      <span className="block text-[#0D1B2A] font-semibold text-sm group-hover:text-[#1A5C38] transition-colors">
+                        +233 546147899 (call)
+                      </span>
                     </div>
                   </a>
 
