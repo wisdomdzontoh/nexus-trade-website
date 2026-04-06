@@ -18,7 +18,7 @@ export default function AgricultureSectorPage() {
       {/* Header */}
       <div className="relative bg-[#0F3D24] pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <Image src="/images/agriculture.jpg" alt="" fill className="object-cover" />
+          <Image src="/images/agriculture/agriculture.jpg" alt="" fill className="object-cover" />
         </div>
         <div className="absolute inset-0 bg-[#0F3D24]/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

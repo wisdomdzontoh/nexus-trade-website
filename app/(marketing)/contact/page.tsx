@@ -1,20 +1,22 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Suspense } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle, MapPin, Clock, MessageSquare } from "lucide-react";
 import ContactForm from "@/components/forms/contact-form";
-
-export const metadata: Metadata = {
-  title: "Contact NexusTrade Ghana",
-  description:
-    "Get in touch with NexusTrade Ghana to enquire about investment opportunities, request a sector briefing, or start a conversation with our team.",
-};
+import { FadeUp, StaggerContainer, StaggerItem, SlideIn } from "@/components/ui/animate";
 
 export default function ContactPage() {
   return (
     <>
-      <div className="bg-[#0F3D24] pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+      <div className="bg-[#0F3D24] pt-32 pb-16 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/ghana/contact-bg.jpg" alt="" fill className="object-cover opacity-15" />
+          <div className="absolute inset-0 bg-[#0F3D24]/80" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-2xl">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-6 h-px bg-[#E6A817]" />
               <span className="text-[#E6A817] text-xs font-semibold uppercase tracking-widest">
@@ -28,7 +30,7 @@ export default function ContactPage() {
               Whether you have a specific opportunity in mind or are just beginning
               to explore Ghana as an investment destination — we'd love to hear from you.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -36,7 +38,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact info */}
-            <div className="lg:col-span-2 space-y-8">
+            <SlideIn direction="left" className="lg:col-span-2 space-y-8">
               <div>
                 <h2 className="text-xl font-bold text-[#0D1B2A] mb-5 font-[family-name:var(--font-playfair)]">
                   Get in touch directly
@@ -164,11 +166,11 @@ export default function ContactPage() {
                   or WhatsApp in your preferred language.
                 </p>
               </div>
-            </div>
+            </SlideIn>
 
             {/* Form */}
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-xl border border-[#E5E0D8] p-8">
+            <SlideIn direction="right" className="lg:col-span-3">
+              <div className="bg-white rounded-xl border border-[#E5E0D8] p-8 shadow-sm">
                 <h2 className="text-xl font-bold text-[#0D1B2A] mb-2 font-[family-name:var(--font-playfair)]">
                   Send us an enquiry
                 </h2>
@@ -180,7 +182,7 @@ export default function ContactPage() {
                   <ContactForm />
                 </Suspense>
               </div>
-            </div>
+            </SlideIn>
           </div>
         </div>
       </section>

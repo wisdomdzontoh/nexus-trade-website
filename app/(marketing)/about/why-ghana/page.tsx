@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FadeUp, StaggerContainer, StaggerItem, SlideIn } from "@/components/ui/animate";
 import {
   ArrowRight,
   CheckCircle2,
@@ -12,11 +15,14 @@ import {
   Scale,
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Why Invest in Ghana",
-  description:
-    "Ghana is West Africa's most stable investment destination. Discover the political stability, economic fundamentals, legal framework, and market access that make Ghana compelling.",
-};
+const ghanaPhotos = [
+  { src: "/images/ghana/black-star-square.jpg", caption: "Black Star Square, Accra" },
+  { src: "/images/ghana/accra-modern.jpg", caption: "Modern Accra skyline" },
+  { src: "/images/ghana/ghana-fish-market.jpg", caption: "Ghanaian market" },
+  { src: "/images/ghana/ghana-market2.jpg", caption: "Vibrant trade scene" },
+  { src: "/images/ghana/accra-skyline2.jpg", caption: "Accra business district" },
+  { src: "/images/ghana/ghana-market.jpg", caption: "Local commerce" },
+];
 
 const pillars = [
   {
@@ -108,10 +114,15 @@ export default function WhyGhanaPage() {
     <>
       {/* Page Header */}
       <div className="relative bg-[#1A5C38] pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <Image src="/images/why-ghana.jpg" alt="" fill className="object-cover" />
+        <div className="absolute inset-0">
+          <Image src="/images/ghana/why-ghana.jpg" alt="" fill className="object-cover opacity-15" />
+          {/* Ghana flag accent bottom-right */}
+          <div className="absolute bottom-0 right-0 h-full w-1/3 opacity-8">
+            <Image src="/images/ghana/ghana-flag.jpg" alt="" fill className="object-cover object-left" />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1A5C38]" />
+          </div>
+          <div className="absolute inset-0 bg-[#1A5C38]/75" />
         </div>
-        <div className="absolute inset-0 bg-[#1A5C38]/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -249,6 +260,46 @@ export default function WhyGhanaPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── GHANA IN PICTURES ─────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeUp className="mb-8">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <div className="w-8 h-px bg-[#C8900A]" />
+              <span className="text-[#C8900A] text-xs font-semibold uppercase tracking-widest">
+                Ghana in Pictures
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#0D1B2A] font-[family-name:var(--font-playfair)]">
+              See Ghana's vibrant economy
+            </h2>
+          </FadeUp>
+
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {ghanaPhotos.map((photo, i) => (
+              <StaggerItem key={photo.src}>
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                  className={`relative rounded-xl overflow-hidden ${i === 0 ? "md:col-span-2 h-64" : "h-44"}`}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.caption}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                    <span className="text-white text-xs font-medium">{photo.caption}</span>
+                  </div>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 

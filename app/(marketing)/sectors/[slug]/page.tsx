@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { sectors, getSectorBySlug } from "@/lib/data/sectors";
 import { opportunities } from "@/lib/data/opportunities";
+import SectorGallery from "@/components/ui/sector-gallery";
 
 export async function generateStaticParams() {
   return sectors.map((s) => ({ slug: s.slug }));
@@ -130,6 +131,11 @@ export default async function SectorDetailPage({
           </div>
         </div>
       </section>
+
+      {/* Photo Gallery */}
+      {sector.galleryImages && sector.galleryImages.length > 0 && (
+        <SectorGallery images={sector.galleryImages} sectorName={sector.name} />
+      )}
 
       {/* Opportunity Areas */}
       <section className="py-16 bg-[#F8F5F0]">

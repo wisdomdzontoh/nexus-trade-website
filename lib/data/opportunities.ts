@@ -12,6 +12,7 @@ export interface Opportunity {
   fullDescription: string;
   highlights: string[];
   image: string;
+  galleryImages?: string[];
   featured: boolean;
 }
 
@@ -36,7 +37,13 @@ export const opportunities: Opportunity[] = [
       "Estimated payback period: 5–7 years at full production",
       "Partnership model: JV with local cooperative or full foreign ownership via GIPC",
     ],
-    image: "/images/rice-farm.jpg",
+    image: "/images/agriculture/rice-farming-africa.jpg",
+    galleryImages: [
+      "/images/agriculture/ghana-rice-farm.jpg",
+      "/images/agriculture/rice-farm.jpg",
+      "/images/agriculture/green-fields.jpg",
+      "/images/agriculture/agriculture.jpg",
+    ],
     featured: true,
   },
   {
@@ -59,7 +66,12 @@ export const opportunities: Opportunity[] = [
       "Supply agreement discussions with two national supermarket chains available",
       "Technical partnerships available with international poultry management firms",
     ],
-    image: "/images/poultry.jpg",
+    image: "/images/agriculture/poultry-farm-interior.jpg",
+    galleryImages: [
+      "/images/agriculture/poultry.jpg",
+      "/images/agriculture/poultry-farm.jpg",
+      "/images/agriculture/food-processing.jpg",
+    ],
     featured: true,
   },
   {
@@ -82,7 +94,15 @@ export const opportunities: Opportunity[] = [
       "Proximity to Takoradi Port — Ghana's main commodity export hub",
       "Pre-qualified buyers in Europe and Asia available for introductions",
     ],
-    image: "/images/cocoa.jpg",
+    image: "/images/coacoa/cocoa1.png",
+    galleryImages: [
+      "/images/coacoa/cocoa2.png",
+      "/images/coacoa/cocoa3.png",
+      "/images/coacoa/cocoa-pods.jpg",
+      "/images/coacoa/cocoa.jpg",
+      "/images/agriculture/agriculture.jpg",
+      "/images/agriculture/food-processing.jpg",
+    ],
     featured: true,
   },
   {
@@ -105,7 +125,7 @@ export const opportunities: Opportunity[] = [
       "Proximity to Tema Port for export logistics",
       "Technical textile training partnerships with Textile Design Institute of Ghana",
     ],
-    image: "/images/textile-manufacturing.jpg",
+    image: "/images/manufacturing/garment-factory.jpg",
     featured: true,
   },
   {
@@ -128,7 +148,14 @@ export const opportunities: Opportunity[] = [
       "On-site customs bonded warehouse for export goods",
       "GIPC one-stop-shop facilitation for all permits and registrations",
     ],
-    image: "/images/agri-processing.jpg",
+    image: "/images/agriculture/food-processing.jpg",
+    galleryImages: [
+      "/images/industrial/tema-port.jpg",
+      "/images/industrial/port-containers.jpg",
+      "/images/agriculture/agri-processing.jpg",
+      "/images/city-buildings/building1.png",
+      "/images/shea-butter/shea-process.jpg",
+    ],
     featured: false,
   },
   {
@@ -151,7 +178,13 @@ export const opportunities: Opportunity[] = [
       "Access to ECOWAS market of 450M consumers for sub-regional export",
       "Strong local procurement demand from government infrastructure programmes",
     ],
-    image: "/images/manufacturing.jpg",
+    image: "/images/manufacturing/manufacturing.jpg",
+    galleryImages: [
+      "/images/industrial/tema-port.jpg",
+      "/images/industrial/port-industrial.jpg",
+      "/images/city-buildings/building2.png",
+      "/images/city-buildings/accra-business.jpg",
+    ],
     featured: false,
   },
 ];

@@ -1,23 +1,26 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, Sprout, Factory, Building2 } from "lucide-react";
 import { sectors } from "@/lib/data/sectors";
-
-export const metadata: Metadata = {
-  title: "Investment Sectors",
-  description:
-    "Explore NexusTrade Ghana's three core investment sectors: Agriculture, Manufacturing, and Industrial Clusters. Each with structured opportunities for foreign investors.",
-};
+import { FadeUp, StaggerContainer, StaggerItem, SlideIn } from "@/components/ui/animate";
 
 const sectorIcons = { Sprout, Factory, Building2 };
 
 export default function SectorsPage() {
   return (
     <>
-      <div className="bg-[#0F3D24] pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+      <div className="bg-[#0F3D24] pt-32 pb-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-2xl">
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-6 h-px bg-[#E6A817]" />
               <span className="text-[#E6A817] text-xs font-semibold uppercase tracking-widest">
@@ -32,18 +35,20 @@ export default function SectorsPage() {
               for foreign investment — selected for policy support, growth
               trajectory, and demonstrated investor returns.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       <section className="py-20 bg-[#F8F5F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
+          <StaggerContainer className="space-y-8">
             {sectors.map((sector, index) => {
               const Icon = sectorIcons[sector.icon as keyof typeof sectorIcons] || Building2;
               return (
-                <div
-                  key={sector.slug}
+                <StaggerItem key={sector.slug}>
+                <motion.div
+                  whileHover={{ y: -3, boxShadow: "0 16px 48px rgba(0,0,0,0.09)" }}
+                  transition={{ duration: 0.3 }}
                   className="bg-white rounded-xl border border-[#E5E0D8] overflow-hidden"
                 >
                   <div className={`grid lg:grid-cols-2 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}>
@@ -88,15 +93,16 @@ export default function SectorsPage() {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </motion.div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       <section className="py-16 bg-[#0D1B2A]">
-        <div className="max-w-4xl mx-auto text-center px-4">
+        <FadeUp className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-[family-name:var(--font-playfair)]">
             Interested in a specific sector?
           </h2>
@@ -110,7 +116,7 @@ export default function SectorsPage() {
           >
             Request a Sector Briefing <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
+        </FadeUp>
       </section>
     </>
   );

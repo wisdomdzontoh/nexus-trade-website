@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Users, Globe, Target, Award } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "About NexusTrade Ghana",
-  description:
-    "NexusTrade Ghana is an investment facilitation company connecting international investors with Ghana's most promising opportunities. Learn about our mission, team, and approach.",
-};
+import { FadeUp, StaggerContainer, StaggerItem, SlideIn, ScaleIn } from "@/components/ui/animate";
 
 const values = [
   {
@@ -41,13 +38,13 @@ const team = [
     name: "Awudu Ibrahim",
     role: "Co-Founder",
     bio: "Awudu brings extensive experience in investment facilitation across West Africa, with deep expertise in navigating Ghana's regulatory environment and building relationships between international capital and local opportunity.",
-    photo: "/images/awudu-ibrahim-photo.png",
+    photo: "/images/team/awudu-ibrahim-photo.png",
   },
   {
     name: "Seth Kunkyebe",
     role: "Co-Founder",
     bio: "Seth brings a strong background in business development and cross-border trade facilitation, with a focus on creating sustainable investment partnerships that drive growth across Ghana's key economic sectors.",
-    photo: "/images/seth-kunkyebe-photo.png",
+    photo: "/images/team/seth-kunkyebe-photo.png",
   },
 ];
 
@@ -55,14 +52,27 @@ export default function AboutPage() {
   return (
     <>
       {/* Page Header */}
-      <div className="bg-[#0F3D24] pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+      <div className="bg-[#0F3D24] pt-32 pb-16 relative overflow-hidden">
+        {/* City buildings background */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/city-buildings/building3.png"
+            alt=""
+            fill
+            className="object-cover opacity-10"
+          />
+          <div className="absolute inset-0 bg-[#0F3D24]/70" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
+          >
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="w-6 h-px bg-[#E6A817]" />
-              <span className="text-[#E6A817] text-xs font-semibold uppercase tracking-widest">
-                About Us
-              </span>
+              <span className="text-[#E6A817] text-xs font-semibold uppercase tracking-widest">About Us</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-[family-name:var(--font-playfair)]">
               Who We Are
@@ -72,7 +82,7 @@ export default function AboutPage() {
               dedicated to connecting international investors with Ghana's most
               promising economic opportunities.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -80,7 +90,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <SlideIn direction="left">
               <div className="inline-flex items-center gap-2 mb-5">
                 <div className="w-8 h-px bg-[#C8900A]" />
                 <span className="text-[#C8900A] text-xs font-semibold uppercase tracking-widest">
@@ -120,12 +130,13 @@ export default function AboutPage() {
                   — NexusTrade Ghana Core Value Proposition
                 </p>
               </div>
-            </div>
+            </SlideIn>
 
+            <SlideIn direction="right">
             <div className="relative">
               <div className="relative rounded-xl overflow-hidden h-96 lg:h-[480px]">
                 <Image
-                  src="/images/about-team.jpg"
+                  src="/images/ghana/about-team.jpg"
                   alt="NexusTrade Ghana team"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -142,6 +153,7 @@ export default function AboutPage() {
                 </span>
               </div>
             </div>
+            </SlideIn>
           </div>
         </div>
       </section>
@@ -149,8 +161,8 @@ export default function AboutPage() {
       {/* What We Do / Don't Do */}
       <section className="py-16 bg-[#F8F5F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl p-8 border border-[#E5E0D8]">
+          <StaggerContainer className="grid md:grid-cols-2 gap-8">
+            <StaggerItem><div className="bg-white rounded-xl p-8 border border-[#E5E0D8]">
               <h3 className="text-xl font-bold text-[#1A5C38] mb-5 font-[family-name:var(--font-playfair)]">
                 ✓ What NexusTrade does
               </h3>
@@ -193,25 +205,62 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </div></StaggerItem>
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Sectors visual strip */}
+      <section className="py-12 bg-white border-y border-[#E5E0D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeUp className="mb-6">
+            <span className="text-[#C8900A] text-xs font-semibold uppercase tracking-widest">
+              Sectors we operate in
+            </span>
+          </FadeUp>
+          <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { src: "/images/agriculture/agriculture.jpg", label: "Agriculture" },
+              { src: "/images/coacoa/cocoa2.png", label: "Cocoa & Export Crops" },
+              { src: "/images/shea-butter/shea1.png", label: "Shea Butter" },
+              { src: "/images/manufacturing/garment-factory.jpg", label: "Manufacturing" },
+              { src: "/images/industrial/tema-port.jpg", label: "Industrial Clusters" },
+              { src: "/images/agriculture/ghana-rice-farm.jpg", label: "Rice & Grains" },
+              { src: "/images/agriculture/poultry-farm-interior.jpg", label: "Poultry" },
+              { src: "/images/ghana/ghana-market.jpg", label: "Trade & Commerce" },
+            ].map((item) => (
+              <StaggerItem key={item.src}>
+                <motion.div
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.25 }}
+                  className="relative h-32 rounded-xl overflow-hidden group cursor-default"
+                >
+                  <Image src={item.src} alt={item.label} fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 640px) 50vw, 25vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-black/10" />
+                  <span className="absolute bottom-2 left-3 text-white text-xs font-semibold">{item.label}</span>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Core Values */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <FadeUp className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A] mb-4 font-[family-name:var(--font-playfair)]">
               Our principles
             </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          </FadeUp>
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value) => {
               const Icon = value.icon;
               return (
-                <div
-                  key={value.title}
+                <StaggerItem key={value.title}>
+                <motion.div
+                  whileHover={{ y: -5, boxShadow: "0 12px 40px rgba(0,0,0,0.08)" }}
+                  transition={{ duration: 0.25 }}
                   className="text-center p-8 bg-[#F8F5F0] rounded-xl border border-[#E5E0D8]"
                 >
                   <div className="w-12 h-12 rounded-full bg-[#1A5C38]/10 flex items-center justify-center mx-auto mb-5">
@@ -223,32 +272,33 @@ export default function AboutPage() {
                   <p className="text-sm text-[#2C2C2C]/60 leading-relaxed">
                     {value.description}
                   </p>
-                </div>
+                </motion.div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Team */}
       <section className="py-20 bg-[#F8F5F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <FadeUp className="text-center mb-14">
             <div className="inline-flex items-center gap-2 mb-5">
               <div className="w-8 h-px bg-[#C8900A]" />
-              <span className="text-[#C8900A] text-xs font-semibold uppercase tracking-widest">
-                Our Team
-              </span>
+              <span className="text-[#C8900A] text-xs font-semibold uppercase tracking-widest">Our Team</span>
               <div className="w-8 h-px bg-[#C8900A]" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A] font-[family-name:var(--font-playfair)]">
               The people behind NexusTrade
             </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          </FadeUp>
+          <StaggerContainer className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {team.map((member) => (
-              <div
-                key={member.name}
+              <StaggerItem key={member.name}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.25 }}
                 className="bg-white rounded-xl border border-[#E5E0D8] overflow-hidden"
               >
                 <div className="relative h-72 bg-[#F8F5F0]">
@@ -272,15 +322,16 @@ export default function AboutPage() {
                     {member.bio}
                   </p>
                 </div>
-              </div>
+              </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-16 bg-[#0D1B2A]">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
+        <FadeUp className="max-w-4xl mx-auto text-center px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-[family-name:var(--font-playfair)]">
             Ready to explore Ghana's investment landscape?
           </h2>
@@ -301,7 +352,7 @@ export default function AboutPage() {
               Why invest in Ghana? <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
-        </div>
+        </FadeUp>
       </section>
     </>
   );

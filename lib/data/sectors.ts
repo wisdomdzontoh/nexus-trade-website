@@ -16,6 +16,7 @@ export interface Sector {
   fullDescription: string;
   image: string;
   icon: string;
+  galleryImages?: string[];
   highlights: SectorHighlight[];
   opportunityAreas: SectorOpportunityArea[];
   keyAdvantages: string[];
@@ -31,7 +32,17 @@ export const sectors: Sector[] = [
       "Ghana's fertile land, reliable rainfall, and pro-investment agricultural policy make it one of West Africa's most compelling destinations for modern farming and agro-processing investment.",
     fullDescription:
       "Agriculture employs approximately 44% of Ghana's workforce and contributes 20% of GDP, yet the sector is significantly underinvested in mechanisation, processing, and value-chain infrastructure. This gap represents a major opportunity for foreign investors seeking high-return plays in a stable, resource-rich environment.\n\nGhana produces cocoa, cassava, rice, maize, yam, plantain, palm oil, and a wide range of horticultural products. ECOWAS market access gives Ghanaian producers preferential entry to a 450 million-person consumer base. The government's Planting for Food and Jobs initiative provides subsidised inputs and technical support to large-scale commercial farms.",
-    image: "/images/agriculture.jpg",
+    image: "/images/agriculture/agriculture.jpg",
+    galleryImages: [
+      "/images/coacoa/cocoa1.png",
+      "/images/coacoa/cocoa2.png",
+      "/images/coacoa/cocoa-pods.jpg",
+      "/images/shea-butter/shea1.png",
+      "/images/shea-butter/shea-process.jpg",
+      "/images/agriculture/ghana-rice-farm.jpg",
+      "/images/agriculture/green-fields.jpg",
+      "/images/agriculture/poultry-farm.jpg",
+    ],
     icon: "Sprout",
     highlights: [
       { stat: "44%", label: "of workforce in agriculture" },
@@ -93,7 +104,14 @@ export const sectors: Sector[] = [
       "Ghana's stable business environment, English-speaking workforce, and port connectivity position it as West Africa's most investable manufacturing base — with preferential market access to the US, EU, and ECOWAS.",
     fullDescription:
       "Manufacturing accounts for approximately 10% of Ghana's GDP and is a priority growth sector under the government's Ghana BEYOND AID agenda. The country's strategic position — Tema Port is one of West Africa's most efficient deep-water ports, and the national road and rail network links it to six landlocked neighbouring countries — makes it a natural hub for sub-regional manufacturing and distribution.\n\nKey incentives for manufacturers include free zone status (10-year tax holiday, duty-free equipment imports), AGOA duty-free access to the US market, and the EU-Ghana Economic Partnership Agreement. Ghana's labour productivity and English-language advantage make it competitive with rising-cost Asian manufacturing zones.",
-    image: "/images/manufacturing.jpg",
+    image: "/images/manufacturing/manufacturing.jpg",
+    galleryImages: [
+      "/images/manufacturing/garment-factory.jpg",
+      "/images/manufacturing/textile-factory.jpg",
+      "/images/manufacturing/textile-manufacturing.jpg",
+      "/images/industrial/port-containers.jpg",
+      "/images/city-buildings/accra-business.jpg",
+    ],
     icon: "Factory",
     highlights: [
       { stat: "10%", label: "of GDP from manufacturing" },
@@ -154,7 +172,16 @@ export const sectors: Sector[] = [
       "Ghana's government-backed industrial parks and special economic zones offer investors serviced plots, pre-installed infrastructure, and streamlined regulatory access — reducing setup time and capital expenditure significantly.",
     fullDescription:
       "Ghana is actively developing a network of industrial zones and special economic clusters designed to attract anchor investors in strategic sectors. These zones provide investors with plug-and-play industrial infrastructure — roads, power substations, water, fibre connectivity, and customs bonded warehousing — significantly reducing the time and capital required to establish operations.\n\nKey zones include the Tema Industrial Area, the Accra Industrial Zone, the Kumasi Industrial Area, and emerging agro-processing parks in the Brong-Ahafo and Northern regions. All major zones operate under the Ghana Free Zones Authority or the Ghana Investment Promotion Centre, offering a consistent, investor-friendly regulatory framework.",
-    image: "/images/industrial.jpg",
+    image: "/images/industrial/tema-port.jpg",
+    galleryImages: [
+      "/images/industrial/port-container.jpg",
+      "/images/industrial/port-containers.jpg",
+      "/images/industrial/port-industrial.jpg",
+      "/images/industrial/industrial.jpg",
+      "/images/city-buildings/building1.png",
+      "/images/city-buildings/building2.png",
+      "/images/city-buildings/accra-business.jpg",
+    ],
     icon: "Building2",
     highlights: [
       { stat: "10yr", label: "income tax holiday in Free Zones" },

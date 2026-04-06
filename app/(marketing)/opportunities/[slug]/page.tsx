@@ -8,6 +8,7 @@ import {
   getOpportunityBySlug,
   getOpportunitiesBySector,
 } from "@/lib/data/opportunities";
+import SectorGallery from "@/components/ui/sector-gallery";
 
 export async function generateStaticParams() {
   return opportunities.map((o) => ({ slug: o.slug }));
@@ -211,6 +212,12 @@ export default async function OpportunityDetailPage({
           </div>
         </div>
       </section>
+
+      {/* Photo Gallery */}
+      {opp.galleryImages && opp.galleryImages.length > 0 && (
+        <SectorGallery images={opp.galleryImages} sectorName={opp.sectorLabel} />
+      )}
+
 
       {/* Related Opportunities */}
       {relatedOpps.length > 0 && (

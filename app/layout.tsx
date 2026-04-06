@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "Connecting international investors with Ghana's most promising sectors — manufacturing, agriculture, and industrial clusters.",
     images: [
       {
-        url: "/images/hero-ghana.jpg",
+        url: "/images/ghana/hero-ghana.jpg",
         width: 1920,
         height: 1080,
         alt: "Ghana Investment Opportunities — NexusTrade Ghana",
